@@ -1,4 +1,4 @@
-package com.cb.service;
+package com.cb.login;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
@@ -39,7 +39,8 @@ public class UserRegistrationService {
 		               .append("address", "")
 		               .append("phoneno", "")
 		               .append("school", "")
-		               .append("dept", "");
+		               .append("dept", "")
+		               .append("LastLoginTime", "");
 			
 			userCollection.insertOne(newDoc);
 			result = "{\"success\": true}";							

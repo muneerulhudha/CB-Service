@@ -42,7 +42,7 @@ public class LoginValidationService {
 			return Response.status(200).entity(result).build();
 		}else{
 			String originalPassword = doc.get("password").toString();
-			String lastlogin = doc.get("LastLoginTime").toString();
+			String lastlogin = doc.get("lastLoginTime").toString();
 			
 			Date time = new Date();
 			doc.append("LastLoginTime", time);

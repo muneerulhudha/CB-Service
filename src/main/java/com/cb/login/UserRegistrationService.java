@@ -31,16 +31,16 @@ public class UserRegistrationService {
 						
 		String result = "";
 		Document doc = userCollection.find(or(eq("username", username), eq("email", email))).first();
-				
+		
 		if(doc == null){
 			Document newDoc = new Document("username", username)
 		               .append("password", Password.getSaltedHash(password))
 		               .append("email", email)		               
 		               .append("address", "")
 		               .append("phoneno", "")
-		               .append("school", "")
+		               .append("name", "")
 		               .append("dept", "")
-		               .append("LastLoginTime", "");
+		               .append("lastLoginTime", "");
 			
 			userCollection.insertOne(newDoc);
 			result = "{\"success\": true}";							
